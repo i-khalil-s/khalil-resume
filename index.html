@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Khalil Bello García - Senior Mobile & Full-Stack Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            accent: '#00e676',
+                            crypto: '#3b82f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Strict 2-Page Print Optimization Rules */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 6mm 8mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            html, body {
+                background: white !important;
+                color: #0f172a !important;
+                font-size: 8pt !important;
+                line-height: 1.2 !important;
+            }
+
+            main {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Prevent page severing across job cards and content blocks */
+            .job-card, .card-box, .impact-box, .education-card, .pub-card {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                -webkit-column-break-inside: avoid !important;
+            }
+
+            .card-box {
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                background: white !important;
+                color: #0f172a !important;
+                padding: 0.4rem 0.6rem !important;
+                margin-bottom: 0.35rem !important;
+                border-radius: 0.4rem !important;
+            }
+
+            /* Compact Header & Typography for Print */
+            h1 {
+                font-size: 16pt !important;
+                line-height: 1.1 !important;
+            }
+            h2 {
+                font-size: 10pt !important;
+                margin-bottom: 0.2rem !important;
+                padding-bottom: 0.1rem !important;
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            h3 {
+                font-size: 9pt !important;
+            }
+            h4 {
+                font-size: 8pt !important;
+            }
+
+            p, li, span {
+                font-size: 7.5pt !important;
+                line-height: 1.15 !important;
+            }
+
+            /* Clean break after main top section */
+            .print-page-1-break {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            /* Minimalist Skills section in print mode */
+            #skillsGrid {
+                display: block !important;
+            }
+
+            .skill-card {
+                display: inline !important;
+                background: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .skill-card > div:first-child {
+                display: inline-block !important;
+                font-weight: bold !important;
+                color: #0f172a !important;
+                margin-right: 0.15rem !important;
+            }
+
+            .skill-card > div:first-child::after {
+                content: ":" !important;
+            }
+
+            .skill-card .flex-wrap {
+                display: inline !important;
+            }
+
+            .skill-card .flex-wrap span {
+                display: inline !important;
+                background: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                font-weight: normal !important;
+                color: #334155 !important;
+            }
+
+            .skill-card .flex-wrap span::after {
+                content: " • " !important;
+                color: #94a3b8 !important;
+            }
+
+            .skill-card .flex-wrap span:last-child::after {
+                content: "; " !important;
+            }
+
+            /* Experience Timeline Compact */
+            .border-l-2 {
+                border-left-width: 1px !important;
+                padding-left: 0.5rem !important;
+                margin-left: 0.15rem !important;
+            }
+
+            ul.list-disc {
+                padding-left: 0.8rem !important;
+            }
+
+            ul.list-disc li {
+                margin-bottom: 0.1rem !important;
+            }
+
+            .impact-box {
+                padding: 0.25rem 0.4rem !important;
+                margin-top: 0.2rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+
+            .blur-3xl {
+                display: none !important;
+            }
+
+            a {
+                text-decoration: none !important;
+                color: #0f172a !important;
+            }
+        }
+
+        /* Web Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(100, 116, 139, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(100, 116, 139, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(100, 116, 139, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Navigation Bar (No-Print) -->
+    <header class="no-print sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 px-4 lg:px-8 py-3 transition-colors duration-200">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="h-3 w-3 rounded-full bg-brand-500 animate-pulse"></span>
+                <span class="font-bold tracking-tight text-slate-900 dark:white text-lg">Sergio Khalil Bello García</span>
+                <span class="hidden md:inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-brand-500/10 text-brand-700 dark:text-brand-400 border border-brand-500/20">Senior iOS & Mobile Lead</span>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all text-sm flex items-center gap-2 border border-slate-300 dark:border-slate-700">
+                    <i class="fa-solid fa-sun text-amber-500 hidden dark:inline"></i>
+                    <i class="fa-solid fa-moon text-indigo-600 dark:hidden"></i>
+                    <span class="hidden sm:inline text-xs font-medium dark:hidden">Dark Mode</span>
+                    <span class="hidden sm:inline text-xs font-medium hidden dark:inline">Light Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8">
+
+        <!-- HEADER / HERO SECTION -->
+        <section class="card-box bg-white dark:bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-xl dark:shadow-2xl relative overflow-hidden transition-colors">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">
+                <div class="space-y-3 max-w-3xl">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                            SERGIO KHALIL <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-emerald-500 to-crypto dark:from-brand-400 dark:via-emerald-400 dark:to-crypto">BELLO GARCÍA</span>
+                        </h1>
+                    </div>
+                    
+                    <p class="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300">
+                        Senior iOS & Mobile Architect <span class="text-brand-600 dark:text-brand-400 font-normal">|</span> Master in Computer Systems
+                    </p>
+
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                        Specializing in high-concurrency mobile banking applications, brownfield cross-platform architecture, AI-assisted developer velocity, robust Backend-for-Frontend (BFF) integrations, and self-initiated product innovations driving user acquisition and revenue growth.
+                    </p>
+
+                    <!-- Contact Metadata Bar -->
+                    <div class="flex flex-wrap items-center gap-y-2 gap-x-4 pt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-brand-600 dark:text-brand-400"></i>
+                            <span>Madrid, Spain & Tlaxcala, Mexico</span>
+                        </div>
+                        <span class="text-slate-400 dark:text-slate-600 hidden sm:inline">•</span>
+                        <a href="mailto:ikhalils@me.com" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            <i class="fa-solid fa-envelope text-brand-600 dark:text-brand-400"></i>
+                        </a>
+                        <span class="text-slate-400 dark:text-slate-600 hidden sm:inline">•</span>
+                        <a href="https://wa.me/522461026417" target="_blank" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Links / Social Badges (No-Print) -->
+                <div class="print flex flex-wrap lg:flex-col gap-2.5 w-full lg:w-auto min-w-[200px]">
+                    <a href="https://www.linkedin.com/in/ikhalil-dev" target="_blank" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 text-xs font-semibold transition-all">
+                        <i class="fa-brands fa-linkedin text-blue-600 dark:text-blue-400 text-base"></i>
+                        <span>LinkedIn Profile</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 ml-auto"></i>
+                    </a>
+                    <a href="https://github.com/i-khalil-s" target="_blank" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 text-xs font-semibold transition-all">
+                        <i class="fa-brands fa-github text-slate-700 dark:text-slate-200 text-base"></i>
+                        <span>GitHub Portfolio</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 ml-auto"></i>
+                    </a>
+                    <a href="https://apps.apple.com/us/app/bitso-buy-bitcoin-easily/id1292836438" target="_blank" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand-500/10 hover:bg-brand-500/20 text-brand-800 dark:text-brand-300 border border-brand-500/30 text-xs font-semibold transition-all">
+                        <i class="fa-brands fa-apple text-brand-600 dark:text-brand-400 text-base"></i>
+                        <span>Featured iOS App</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-brand-600 dark:text-brand-400 ml-auto"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXECUTIVE SUMMARY -->
+        <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-3">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                <i class="fa-solid fa-user-astronaut text-brand-600 dark:text-brand-400"></i>
+                Executive Summary
+            </h2>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                Senior Mobile & Full-Stack Architect with over 8 years of experience combining deep technical engineering with entrepreneurial ownership, product leadership, and deep user empathy. Proven track record at <strong class="text-slate-900 dark:text-white">Bitso</strong> (Latin America’s leading crypto platform) of taking autonomous initiatives from concept to production—such as self-initiating, rallying cross-functional peers around, and launching the Bitso Price Widget, directly driving <strong class="text-slate-900 dark:text-white">10K+ new monthly revenue-generating user transactions</strong>. Expert in high-concurrency iOS/Android apps, AI workflow fine-tuning (Claude/Cursor), brownfield migrations, and resilient BFF microservices. Published NLP researcher (IEEE Xplore) with distinction in Computer Systems, skilled at bridging technical excellence with data-driven business strategy across engineering, marketing, and legal teams.
+            </p>
+        </section>
+
+        <!-- CORE TECHNICAL SKILLS -->
+        <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-layer-group text-brand-600 dark:text-brand-400"></i>
+                    Core Technical Competencies
+                </h2>
+                
+                <!-- Filter Pills (No-Print) -->
+                <div class="no-print flex flex-wrap gap-1.5 text-xs">
+                    <button onclick="filterSkills('all')" class="skill-filter-btn active px-3 py-1 rounded-lg bg-brand-600 dark:bg-brand-500 text-white font-medium transition-all" data-filter="all">All</button>
+                    <button onclick="filterSkills('mobile')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="mobile">Mobile</button>
+                    <button onclick="filterSkills('backend')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="backend">Backend & AI</button>
+                    <button onclick="filterSkills('ops')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="ops">DevOps & Observability</button>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="skillsGrid">
+                
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="mobile">
+                    <div class="flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold text-sm">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>Mobile Engineering</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Swift & SwiftUI</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Kotlin & Android</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">React Native</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Brownfield Integration</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">SPM / CocoaPods</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">GCD & Async/Await</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">iOS Widgets Kit</span>
+                    </div>
+                </div>
+
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="backend">
+                    <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-sm">
+                        <i class="fa-solid fa-server"></i>
+                        <span>Backend & BFF Infrastructure</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Java & Spring Boot</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">RESTful APIs & JWT</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Python & Django</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Signadot Sandboxes</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Redis & MySQL</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">AWS Services</span>
+                    </div>
+                </div>
+
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="backend">
+                    <div class="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold text-sm">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>AI & Machine Learning</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Claude Code Automation</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Cursor AI Prompt Skills</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">PyTorch & FastAI</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Neural Machine Translation</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">CodeRabbit Code Reviews</span>
+                    </div>
+                </div>
+
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="ops">
+                    <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>CI/CD & Testing</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Fastlane & Bitrise</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">GitHub Actions & Jenkins</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Test-Driven Development (TDD)</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Docker Containerization</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Git Flow & PR Enforcement</span>
+                    </div>
+                </div>
+
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="ops">
+                    <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Monitoring & Telemetry</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">DataDog APM</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Amplitude Analytics</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Incident.io</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Splunk Log Tracing</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">ArgoCD Deployments</span>
+                    </div>
+                </div>
+
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="mobile">
+                    <div class="flex items-center gap-2 text-pink-600 dark:text-pink-400 font-semibold text-sm">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <span>Methodologies & Leadership</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">SOLID Design Principles</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Scrum / Agile Guilds</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Jira & Confluence</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Figma & Miro System Design</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Lokalize i18n</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE SECTION -->
+        <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-6">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-briefcase text-brand-600 dark:text-brand-400"></i>
+                    Professional Experience
+                </h2>
+                <span class="text-xs text-slate-500 dark:text-slate-400 italic">8+ Years Total Engineering Experience</span>
+            </div>
+
+            <div class="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 pl-4 sm:pl-6 ml-2 sm:ml-4">
+
+                <!-- EXPERIENCE 1: BITSO (Strictly non-severed on Page 1) -->
+                <div class="job-card relative space-y-3">
+                    <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-brand-600 dark:bg-brand-500 border-4 border-slate-50 dark:border-slate-950"></span>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex flex-wrap items-center gap-2">
+                                Senior iOS / Mobile / Java Developer
+                                <span class="px-2 py-0.5 text-xs rounded-md bg-brand-500/10 dark:bg-brand-500/20 text-brand-700 dark:text-brand-300 font-semibold border border-brand-500/30">Bitso Consumer App</span>
+                            </h3>
+                            <p class="text-sm text-brand-600 dark:text-brand-400 font-medium">Bitso • Remote (Spain / Mexico)</p>
+                        </div>
+                        <div class="flex flex-col sm:items-end gap-1.5">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2021 – 2026 (5 yrs)</span>
+                            <a href="https://apps.apple.com/us/app/bitso-buy-bitcoin-easily/id1292836438" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 font-medium hover:underline">
+                                <i class="fa-brands fa-apple"></i>
+                                <span>Bitso App Store Link</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key Results Banner Callout -->
+                    <div class="impact-box p-3.5 rounded-xl bg-brand-500/5 dark:bg-brand-500/10 border border-brand-500/20 space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy"></i> Key Results & Impact
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs text-slate-700 dark:text-slate-300">
+                            <div>🚀 <strong class="text-slate-900 dark:text-white">+10K New Monthly Transactions</strong> via mobile widget entry point.</div>
+                            <div>📈 <strong class="text-slate-900 dark:text-white">Coverage Boosted 40% ➔ 70%+</strong> applying TDD across guilds.</div>
+                            <div>⚡ <strong class="text-slate-900 dark:text-white">API Delivery Accelerated</strong> from weeks to 2 days using Signadot sandboxes.</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                        <li>Architected, developed, and maintained core iOS consumer features for scaling fintech applications while ensuring code simplicity and strict UX adherence.</li>
+                        <li>Spearheaded the design, implementation, and telemetry of the Bitso Price Widget, monitoring conversion metrics through Amplitude and DataDog.</li>
+                        <li>Wrote pure Java Back-end and Back-end For Frontend (BFF) RESTful features with mobile security integration, leveraging Signadot sandbox environments to test APIs concurrently with app flows.</li>
+                        <li>Employed Claude Code and Cursor AI tools, creating custom fine-tuned developer prompts/skills to automate recurring development tasks and widget creation.</li>
+                        <li>Executed a brownfield migration from native iOS/Android screens to React Native modules, enabling squads to deliver double the feature velocity across shared user paths.</li>
+                        <li>Enforced unit testing standards and code reviews across pull requests in the engineering guild to guarantee architectural consistency and reliability during rebranding campaigns.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Kotlin</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">React Native</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Java</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Signadot</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Claude Code / Cursor</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">DataDog</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Incident.io</span>
+                    </div>
+                </div>
+
+                <!-- Page 1 End Divider for Printing -->
+                <div class="print-page-1-break"></div>
+
+                <!-- EXPERIENCE 2: ITLAJTOL -->
+                <div class="job-card relative space-y-3">
+                    <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-indigo-500 border-4 border-slate-50 dark:border-slate-950"></span>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                Co-Founder & AI/Mobile Developer
+                                <span class="px-2 py-0.5 text-xs rounded-md bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 font-semibold border border-indigo-500/30">iTlajtol-no Tlajtol App</span>
+                            </h3>
+                            <p class="text-sm text-brand-600 dark:text-brand-400 font-medium">iTlajtol Platform • Apizaco, Mexico</p>
+                        </div>
+                        <div class="flex flex-col sm:items-end gap-1.5">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2019 – 2021 (2 yrs)</span>
+                            <a href="https://github.com/i-khalil-s/iTlajtol" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+                                <i class="fa-brands fa-github"></i>
+                                <span>iTlajtol GitHub Repository</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key Results Banner Callout -->
+                    <div class="impact-box p-3.5 rounded-xl bg-indigo-500/5 dark:bg-indigo-500/10 border border-indigo-500/20 space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy"></i> Key Results & Impact
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
+                            <div>🎯 <strong class="text-slate-900 dark:text-white">BLEU Score Jump 0.30 ➔ 0.63</strong> in state-of-the-art indigenous NLP translation.</div>
+                            <div>🎓 <strong class="text-slate-900 dark:text-white">Adopted Academic Platform</strong> serving students, research staff, and indigenous preservationists.</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                        <li>Founded an automated neural machine translation platform for Nahuatl based on Master's degree thesis research, bridging indigenous language preservation with mobile technology.</li>
+                        <li>Trained Deep Learning Sequence-to-Sequence and Attention-based models using PyTorch and FastAI, drastically improving translation accuracy BLEU scores.</li>
+                        <li>Configured and deployed containerized Django REST microservices hosted inside Docker containers behind NGINX web servers on production infrastructure.</li>
+                        <li>Developed the companion iOS app utilizing Swift and SwiftUI, delivering real-time translation and artificial pronunciation audio synthesis for field usage.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift / SwiftUI</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python / Django</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">PyTorch / FastAI</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Docker</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">NGINX</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MariaDB</span>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 3: THE CLOUD GROUP -->
+                <div class="job-card relative space-y-3">
+                    <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-blue-500 border-4 border-slate-50 dark:border-slate-950"></span>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">CTO, Developer & Project Manager</h3>
+                            <p class="text-sm text-brand-600 dark:text-brand-400 font-medium">The Cloud Group • Madrid, Spain</p>
+                        </div>
+                        <div class="flex flex-col sm:items-end gap-1.5">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2018 (6 mos)</span>
+                            <a href="https://thecloud.group" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                                <i class="fa-solid fa-globe"></i>
+                                <span>The Cloud Group Site</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key Results Banner Callout -->
+                    <div class="impact-box p-3.5 rounded-xl bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy"></i> Key Results & Impact
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
+                            <div>🛠️ <strong class="text-slate-900 dark:text-white">Revamped Legacy Enterprise CRM</strong> for solar & awning energy devices across Europe.</div>
+                            <div>💶 <strong class="text-slate-900 dark:text-white">Crowdfunding Launch</strong> successfully introduced an international European funding portal.</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                        <li>Overhauled and refactored a mission-critical legacy PHP/MySQL CRM web platform managing inventory, installations, and orders for solar energy devices.</li>
+                        <li>Directed cross-functional technical projects across Madrid teams, establishing Git versioning guidelines and project management workflows.</li>
+                        <li>Architected and launched an international crowdfunding web platform targeting European renewable energy initiatives.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">PHP</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">JavaScript</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">HTML5 / CSS3</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MySQL</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Git</span>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 4: SMARTSOFT AMERICA -->
+                <div class="job-card relative space-y-3">
+                    <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-emerald-500 border-4 border-slate-50 dark:border-slate-950"></span>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                Co-Founder & Lead Mobile/Backend Developer
+                                <span class="px-2 py-0.5 text-xs rounded-md bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-500/30">FoodExpress Platform</span>
+                            </h3>
+                            <p class="text-sm text-brand-600 dark:text-brand-400 font-medium">SmartSoft America Business Application • Tlaxcala, Mexico</p>
+                        </div>
+                        <div class="flex flex-col sm:items-end gap-1.5">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2017 – 2019 (3 yrs)</span>
+                            <a href="https://smartsoftamerica.com.mx/" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-medium hover:underline">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>FoodExpress App Store</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key Results Banner Callout -->
+                    <div class="impact-box p-3.5 rounded-xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy"></i> Key Results & Impact
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs text-slate-700 dark:text-slate-300">
+                            <div>🍔 <strong class="text-slate-900 dark:text-white">1M Regional Market Reached</strong> via FoodExpress on-demand platform.</div>
+                            <div>📊 <strong class="text-slate-900 dark:text-white">10% Active Daily Volume</strong> processed across city networks.</div>
+                            <div>🤖 <strong class="text-slate-900 dark:text-white">First App with 3+ Production AI Modules</strong> in regional market.</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                        <li>Co-founded "FoodExpress", a premier regional on-demand food and delivery platform designed for a market of 1M users in Tlaxcala.</li>
+                        <li>Architected and built the main backend infrastructure utilizing Java, JSF, MySQL, and REST APIs, handling high transaction concurrency with Git collaboration protocols.</li>
+                        <li>Engineered multiple iOS client applications (customer, merchant, and delivery courier interfaces) using Swift and CocoaPods.</li>
+                        <li>Partnered with three university research teams to integrate 3 distinct Artificial Intelligence modules into production, optimizing delivery routing and restaurant recommendations.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Java / JSF</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MySQL</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">CocoaPods</span>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE 5: IAIP TLAXCALA -->
+                <div class="job-card relative space-y-3">
+                    <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-slate-50 dark:border-slate-950"></span>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">iOS Developer</h3>
+                            <p class="text-sm text-brand-600 dark:text-brand-400 font-medium">Instituto de Acceso a la Información Pública (IAIP) • Tlaxcala, Mexico</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">Summer 2016</span>
+                    </div>
+
+                    <!-- Key Results Banner Callout -->
+                    <div class="impact-box p-3.5 rounded-xl bg-slate-500/5 dark:bg-slate-500/10 border border-slate-500/20 space-y-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy"></i> Key Results & Impact
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300">
+                            <div>🥇 <strong class="text-slate-900 dark:text-white">First Place Winner</strong> in University Mobile App Contest.</div>
+                            <div>🏛️ <strong class="text-slate-900 dark:text-white">Statewide Transparency App Deployed</strong> for citizen public information requests.</div>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
+                        <li>Designed and deployed an official iOS application for the state of Tlaxcala allowing citizens to submit public information requests and track governmental response progress.</li>
+                        <li>Won 1st Place in the university-wide mobile development contest led by state technological supervisors.</li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Objective-C / Swift</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">iOS SDK</span>
+                        <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">REST APIs</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TWO COLUMN GRID: ACADEMIC PUBLICATIONS & EDUCATION -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <!-- PUBLICATIONS -->
+            <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-book-bookmark text-brand-600 dark:text-brand-400"></i>
+                    Academic Publications
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <div class="pub-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <span class="text-xs font-semibold text-brand-600 dark:text-brand-400">IEEE Xplore • 2020</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Towards the implementation of an Attention-based Neural Machine Translation for Nahuatl as a mobile app</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Co-Author | pp. 235-244</p>
+                    </div>
+
+                    <div class="pub-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <span class="text-xs font-semibold text-brand-600 dark:text-brand-400">CiBlyT • 2019</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Use of Data Structures in Identification Desirable Forms for Electronic Business Agenda</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Co-Author</p>
+                    </div>
+
+                    <div class="pub-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <span class="text-xs font-semibold text-brand-600 dark:text-brand-400">Academia Journals • 2017</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Application of Prototype Node Algorithm for Hands-Free Devices</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Co-Author</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-graduation-cap text-brand-600 dark:text-brand-400"></i>
+                    Education
+                </h2>
+
+                <div class="space-y-3 text-sm">
+                    <div class="education-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-900 dark:text-white">Master in Computer Systems</h4>
+                            <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">2019 – 2021</span>
+                        </div>
+                        <p class="text-slate-700 dark:text-slate-300 text-xs">Tecnológico Nacional de México campus Apizaco</p>
+                        <p class="text-xs text-brand-600 dark:text-brand-300 font-medium">✨ Graduated with Distinction (Honorific Mention)</p>
+                    </div>
+
+                    <div class="education-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-900 dark:text-white">B.S. Information & Tech Software Engineering</h4>
+                            <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">2014 – 2019</span>
+                        </div>
+                        <p class="text-slate-700 dark:text-slate-300 text-xs">Tecnológico Nacional de México campus Apizaco</p>
+                        <p class="text-xs text-brand-600 dark:text-brand-300 font-medium">🏆 GPA 97.26 / 100 — Valedictorian / Highest Class Average</p>
+                    </div>
+
+                    <div class="education-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-900 dark:text-white">Dual Program Study Abroad Internship</h4>
+                            <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">2018</span>
+                        </div>
+                        <p class="text-slate-700 dark:text-slate-300 text-xs">Universidad Católica de Murcia (UCAM), Spain</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- TWO COLUMN GRID: LANGUAGES & COMMUNITY ACTIVITIES -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <!-- LANGUAGES & CERTIFICATIONS -->
+            <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-language text-brand-600 dark:text-brand-400"></i>
+                    Languages & Certifications
+                </h2>
+
+                <div class="space-y-2.5">
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 transition-colors">
+                        <div class="space-y-0.5">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">Spanish</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Native Proficiency</p>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-semibold rounded bg-brand-500/10 dark:bg-brand-500/20 text-brand-700 dark:text-brand-300">Native</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 transition-colors">
+                        <div class="space-y-0.5">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">English</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">TOEFL ITP: 617 Score (B2/C1) | EFSET: 80/100 (C2)</p>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-semibold rounded bg-blue-500/10 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300">C2 Proficient</span>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 transition-colors">
+                        <div class="space-y-0.5">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">French</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">A1 Basic Communication & Continuous Learner</p>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-semibold rounded bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">Elementary</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMMUNITY & INTERESTS -->
+            <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <i class="fa-solid fa-heart-pulse text-brand-600 dark:text-brand-400"></i>
+                    Community & Leadership
+                </h2>
+
+                <div class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Technical & Product Mentorship @ Bitso</h4>
+                            <span class="text-[10px] uppercase font-semibold text-brand-600 dark:text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded">Leadership</span>
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Driven by a passion for understanding user needs and advocating for user-first outcomes. Mentored engineering peers as well as non-technical stakeholders (Legal, Marketing, Product Ops), bridging complex analytics into clear, actionable business insights using telemetry platforms like DataDog and Amplitude to align cross-functional teams around data-backed product decisions.</p>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">ANPM Tlaxcala Math Instructor</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Deliver regular tech training courses for LaTeX, Geogebra, and advanced mathematics to university and high school faculty.</p>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
+                        <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Personal Engineering Interests</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">AI workflow fine-tuning, automated code tools, video composition (After Effects / Cinema 4D), global history, and Apple ecosystem software.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer (No-Print) -->
+    <footer class="no-print max-w-6xl mx-auto px-4 py-6 text-center text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 mt-8">
+        <p>© 2026 Sergio Khalil Bello García. Crafted for high performance and clean architecture.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Theme Toggle & Persistence Script
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.classList.remove('dark');
+        } else {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Skill Filtering Logic
+        function filterSkills(category) {
+            const skillCards = document.querySelectorAll('.skill-card');
+            const filterBtns = document.querySelectorAll('.skill-filter-btn');
+
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-brand-600', 'dark:bg-brand-500', 'text-white');
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                } else {
+                    btn.classList.remove('bg-brand-600', 'dark:bg-brand-500', 'text-white');
+                    btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                }
+            });
+
+            skillCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
