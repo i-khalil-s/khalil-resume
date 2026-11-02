@@ -66,11 +66,9 @@
                 padding: 0 !important;
             }
 
-            /* Prevent page severing across job cards and content blocks */
             .job-card, .card-box, .impact-box, .education-card, .pub-card {
                 break-inside: avoid !important;
                 page-break-inside: avoid !important;
-                -webkit-column-break-inside: avoid !important;
             }
 
             .card-box {
@@ -83,143 +81,53 @@
                 border-radius: 0.4rem !important;
             }
 
-            /* Compact Header & Typography for Print */
-            h1 {
-                font-size: 16pt !important;
-                line-height: 1.1 !important;
-            }
-            h2 {
-                font-size: 10pt !important;
-                margin-bottom: 0.2rem !important;
-                padding-bottom: 0.1rem !important;
-                border-bottom: 1px solid #e2e8f0 !important;
-            }
-            h3 {
-                font-size: 9pt !important;
-            }
-            h4 {
-                font-size: 8pt !important;
-            }
+            h1 { font-size: 16pt !important; line-height: 1.1 !important; }
+            h2 { font-size: 10pt !important; margin-bottom: 0.2rem !important; padding-bottom: 0.1rem !important; border-bottom: 1px solid #e2e8f0 !important; }
+            h3 { font-size: 9pt !important; }
+            h4 { font-size: 8pt !important; }
+            p, li, span { font-size: 7.5pt !important; line-height: 1.15 !important; }
 
-            p, li, span {
-                font-size: 7.5pt !important;
-                line-height: 1.15 !important;
-            }
-
-            /* Clean break after main top section */
             .print-page-1-break {
                 page-break-after: always !important;
                 break-after: page !important;
             }
 
-            /* Minimalist Skills section in print mode */
-            #skillsGrid {
-                display: block !important;
-            }
+            #skillsGrid { display: block !important; }
+            .skill-card { display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; }
+            .skill-card > div:first-child { display: inline-block !important; font-weight: bold !important; color: #0f172a !important; margin-right: 0.15rem !important; }
+            .skill-card > div:first-child::after { content: ":" !important; }
+            .skill-card .flex-wrap { display: inline !important; }
+            .skill-card .flex-wrap span { display: inline !important; background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; font-weight: normal !important; color: #334155 !important; }
+            .skill-card .flex-wrap span::after { content: " • " !important; color: #94a3b8 !important; }
+            .skill-card .flex-wrap span:last-child::after { content: "; " !important; }
 
-            .skill-card {
-                display: inline !important;
-                background: none !important;
-                border: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                box-shadow: none !important;
-            }
-
-            .skill-card > div:first-child {
-                display: inline-block !important;
-                font-weight: bold !important;
-                color: #0f172a !important;
-                margin-right: 0.15rem !important;
-            }
-
-            .skill-card > div:first-child::after {
-                content: ":" !important;
-            }
-
-            .skill-card .flex-wrap {
-                display: inline !important;
-            }
-
-            .skill-card .flex-wrap span {
-                display: inline !important;
-                background: none !important;
-                border: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                font-weight: normal !important;
-                color: #334155 !important;
-            }
-
-            .skill-card .flex-wrap span::after {
-                content: " • " !important;
-                color: #94a3b8 !important;
-            }
-
-            .skill-card .flex-wrap span:last-child::after {
-                content: "; " !important;
-            }
-
-            /* Experience Timeline Compact */
-            .border-l-2 {
-                border-left-width: 1px !important;
-                padding-left: 0.5rem !important;
-                margin-left: 0.15rem !important;
-            }
-
-            ul.list-disc {
-                padding-left: 0.8rem !important;
-            }
-
-            ul.list-disc li {
-                margin-bottom: 0.1rem !important;
-            }
-
-            .impact-box {
-                padding: 0.25rem 0.4rem !important;
-                margin-top: 0.2rem !important;
-                margin-bottom: 0.2rem !important;
-            }
-
-            .blur-3xl {
-                display: none !important;
-            }
-
-            a {
-                text-decoration: none !important;
-                color: #0f172a !important;
-            }
+            .border-l-2 { border-left-width: 1px !important; padding-left: 0.5rem !important; margin-left: 0.15rem !important; }
+            ul.list-disc { padding-left: 0.8rem !important; }
+            ul.list-disc li { margin-bottom: 0.1rem !important; }
+            .impact-box { padding: 0.25rem 0.4rem !important; margin-top: 0.2rem !important; margin-bottom: 0.2rem !important; }
+            .blur-3xl { display: none !important; }
+            a { text-decoration: none !important; color: #0f172a !important; }
         }
 
-        /* Web Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(100, 116, 139, 0.1);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(100, 116, 139, 0.3);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(100, 116, 139, 0.5);
-        }
+        /* Web Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(100, 116, 139, 0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Top Navigation Bar (No-Print) -->
+    <!-- Navigation Header -->
     <header class="no-print sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 px-4 lg:px-8 py-3 transition-colors duration-200">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="h-3 w-3 rounded-full bg-brand-500 animate-pulse"></span>
-                <span class="font-bold tracking-tight text-slate-900 dark:white text-lg">Sergio Khalil Bello García</span>
-                <span class="hidden md:inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-brand-500/10 text-brand-700 dark:text-brand-400 border border-brand-500/20">Senior iOS & Mobile Lead</span>
+                <span class="font-bold tracking-tight text-slate-900 dark:text-white text-lg">Sergio Khalil Bello García</span>
+                <span class="hidden md:inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-brand-500/10 text-brand-700 dark:text-brand-400 border border-brand-500/20">Senior iOS & Mobile Architect</span>
             </div>
 
             <div class="flex items-center space-x-3">
-                <!-- Theme Toggle Button -->
                 <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all text-sm flex items-center gap-2 border border-slate-300 dark:border-slate-700">
                     <i class="fa-solid fa-sun text-amber-500 hidden dark:inline"></i>
                     <i class="fa-solid fa-moon text-indigo-600 dark:hidden"></i>
@@ -233,10 +141,10 @@
     <!-- Main Container -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8">
 
-        <!-- HEADER / HERO SECTION -->
+        <!-- HERO SECTION -->
         <section class="card-box bg-white dark:bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-xl dark:shadow-2xl relative overflow-hidden transition-colors">
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative z-10">
                 <div class="space-y-3 max-w-3xl">
@@ -247,14 +155,13 @@
                     </div>
                     
                     <p class="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300">
-                        Senior iOS & Mobile Architect <span class="text-brand-600 dark:text-brand-400 font-normal">|</span> Master in Computer Systems
+                        Senior Mobile & Full-Stack Architect <span class="text-brand-600 dark:text-brand-400 font-normal">|</span> Master in Computer Systems
                     </p>
 
                     <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
                         Specializing in high-concurrency mobile banking applications, brownfield cross-platform architecture, AI-assisted developer velocity, robust Backend-for-Frontend (BFF) integrations, and self-initiated product innovations driving user acquisition and revenue growth.
                     </p>
 
-                    <!-- Contact Metadata Bar -->
                     <div class="flex flex-wrap items-center gap-y-2 gap-x-4 pt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                         <div class="flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-brand-600 dark:text-brand-400"></i>
@@ -263,16 +170,23 @@
                         <span class="text-slate-400 dark:text-slate-600 hidden sm:inline">•</span>
                         <a href="mailto:ikhalils@me.com" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
                             <i class="fa-solid fa-envelope text-brand-600 dark:text-brand-400"></i>
+                            <span>Email</span>
                         </a>
                         <span class="text-slate-400 dark:text-slate-600 hidden sm:inline">•</span>
                         <a href="https://wa.me/522461026417" target="_blank" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
                             <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+                            <span>WhatsApp</span>
+                        </a>
+
+                        <span class="text-slate-400 dark:text-slate-600 hidden sm:inline">•</span>
+                        <a href="tel:+34645761714" target="_blank" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            <i class="fa fa-phone text-emerald-500 text-base"></i>
+                            <span>Phone 🇪🇸</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Action Links / Social Badges (No-Print) -->
-                <div class="print flex flex-wrap lg:flex-col gap-2.5 w-full lg:w-auto min-w-[200px]">
+                <div class="flex flex-wrap lg:flex-col gap-2.5 w-full lg:w-auto min-w-[200px]">
                     <a href="https://www.linkedin.com/in/ikhalil-dev" target="_blank" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 text-xs font-semibold transition-all">
                         <i class="fa-brands fa-linkedin text-blue-600 dark:text-blue-400 text-base"></i>
                         <span>LinkedIn Profile</span>
@@ -299,24 +213,24 @@
                 Executive Summary
             </h2>
             <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                Senior Mobile & Full-Stack Architect with over 8 years of experience combining deep technical engineering with entrepreneurial ownership, product leadership, and deep user empathy. Proven track record at <strong class="text-slate-900 dark:text-white">Bitso</strong> (Latin America’s leading crypto platform) of taking autonomous initiatives from concept to production—such as self-initiating, rallying cross-functional peers around, and launching the Bitso Price Widget, directly driving <strong class="text-slate-900 dark:text-white">10K+ new monthly revenue-generating user transactions</strong>. Expert in high-concurrency iOS/Android apps, AI workflow fine-tuning (Claude/Cursor), brownfield migrations, and resilient BFF microservices. Published NLP researcher (IEEE Xplore) with distinction in Computer Systems, skilled at bridging technical excellence with data-driven business strategy across engineering, marketing, and legal teams.
+                Senior Mobile & Full-Stack Architect with over 8 years of experience blending deep technical engineering with entrepreneurial ownership, product leadership, and deep user empathy. Proven track record at scale of transforming autonomous initiatives from concept to production—including proposing, aligning cross-functional teams around, and launching high-impact features that directly drive over <strong class="text-slate-900 dark:text-white">10K+ new monthly revenue-generating user transactions</strong> through targeted growth communication and product integration. Expert in high-concurrency iOS/Android applications, AI-assisted development workflows, brownfield migrations, and resilient BFF microservices. Published NLP researcher (IEEE) with distinction in Computer Systems, skilled at bridging technical excellence with data-driven business strategy across engineering, product, marketing, and legal teams.
             </p>
         </section>
 
-        <!-- CORE TECHNICAL SKILLS -->
+        <!-- TECHNICAL & SOFT SKILLS -->
         <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
                     <i class="fa-solid fa-layer-group text-brand-600 dark:text-brand-400"></i>
-                    Core Technical Competencies
+                    Core Competencies & Product Mindset
                 </h2>
                 
-                <!-- Filter Pills (No-Print) -->
                 <div class="no-print flex flex-wrap gap-1.5 text-xs">
                     <button onclick="filterSkills('all')" class="skill-filter-btn active px-3 py-1 rounded-lg bg-brand-600 dark:bg-brand-500 text-white font-medium transition-all" data-filter="all">All</button>
                     <button onclick="filterSkills('mobile')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="mobile">Mobile</button>
                     <button onclick="filterSkills('backend')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="backend">Backend & AI</button>
                     <button onclick="filterSkills('ops')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="ops">DevOps & Observability</button>
+                    <button onclick="filterSkills('soft')" class="skill-filter-btn px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium transition-all border border-slate-200 dark:border-slate-700" data-filter="soft">Leadership & Soft Skills</button>
                 </div>
             </div>
 
@@ -410,6 +324,34 @@
                     </div>
                 </div>
 
+                <!-- Product Ownership & Growth Leadership -->
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="soft">
+                    <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Product Ownership & Growth Leadership</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">End-to-End PRD Authoring</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Marketing & Growth Alignment</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Figma Prototyping</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Cross-Platform Coordination</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Domain Expansion (iOS to BFF)</span>
+                    </div>
+                </div>
+
+                <!-- User Empathy & Communication -->
+                <div class="skill-card p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50 space-y-3 transition-colors" data-category="soft">
+                    <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>User Empathy & Communication</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">LatAm & Brazil User Focus</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Legal & Compliance Synergy</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Data-Driven Decision Making</span>
+                        <span class="px-2.5 py-1 text-xs rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Guild Code Review Mentorship</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -425,7 +367,7 @@
 
             <div class="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 pl-4 sm:pl-6 ml-2 sm:ml-4">
 
-                <!-- EXPERIENCE 1: BITSO (Strictly non-severed on Page 1) -->
+                <!-- EXPERIENCE 1: BITSO -->
                 <div class="job-card relative space-y-3">
                     <span class="absolute -left-[25px] sm:-left-[33px] top-1.5 h-4 w-4 rounded-full bg-brand-600 dark:bg-brand-500 border-4 border-slate-50 dark:border-slate-950"></span>
                     
@@ -439,9 +381,15 @@
                         </div>
                         <div class="flex flex-col sm:items-end gap-1.5">
                             <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2021 – 2026 (5 yrs)</span>
-                            <a href="https://apps.apple.com/us/app/bitso-buy-bitcoin-easily/id1292836438" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 font-medium hover:underline">
+                            <a href="https://apps.apple.com/us/app/bitso-buy-bitcoin-easily/id1292836438" target="_blank" class="no-print inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 font-medium hover:underline">
                                 <i class="fa-brands fa-apple"></i>
                                 <span>Bitso App Store Link</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+
+                            <a href="https://play.google.com/store/apps/details?id=com.bitso.wallet&hl=es_419" target="_blank" class="no-print inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 font-medium hover:underline">
+                                <i class="fa-brands fa-android"></i>
+                                <span>Google Play Store Link</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                             </a>
                         </div>
@@ -454,21 +402,84 @@
                         </span>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs text-slate-700 dark:text-slate-300">
                             <div>🚀 <strong class="text-slate-900 dark:text-white">+10K New Monthly Transactions</strong> via mobile widget entry point.</div>
-                            <div>📈 <strong class="text-slate-900 dark:text-white">Coverage Boosted 40% ➔ 70%+</strong> applying TDD across guilds.</div>
-                            <div>⚡ <strong class="text-slate-900 dark:text-white">API Delivery Accelerated</strong> from weeks to 2 days using Signadot sandboxes.</div>
+                            <div>📈 <strong class="text-slate-900 dark:text-white">Coverage Boosted 50% ➔ 70%+</strong> applying TDD across guilds.</div>
+                            <div>⚡ <strong class="text-slate-900 dark:text-white">API Delivery Accelerated</strong> using Signadot sandboxes.</div>
                         </div>
                     </div>
 
                     <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
-                        <li>Architected, developed, and maintained core iOS consumer features for scaling fintech applications while ensuring code simplicity and strict UX adherence.</li>
-                        <li>Spearheaded the design, implementation, and telemetry of the Bitso Price Widget, monitoring conversion metrics through Amplitude and DataDog.</li>
-                        <li>Wrote pure Java Back-end and Back-end For Frontend (BFF) RESTful features with mobile security integration, leveraging Signadot sandbox environments to test APIs concurrently with app flows.</li>
-                        <li>Employed Claude Code and Cursor AI tools, creating custom fine-tuned developer prompts/skills to automate recurring development tasks and widget creation.</li>
-                        <li>Executed a brownfield migration from native iOS/Android screens to React Native modules, enabling squads to deliver double the feature velocity across shared user paths.</li>
-                        <li>Enforced unit testing standards and code reviews across pull requests in the engineering guild to guarantee architectural consistency and reliability during rebranding campaigns.</li>
+                        <li>Architected, developed, and maintained core iOS consumer features for scaling fintech applications while ensuring code simplicity and strict UX adherence, helping <b>push unit test coverage beyond 50%</b>.</li>
+                        <li>Spearheaded the design, implementation, and tracking of the Bitso Price Widget, monitoring conversion metrics through Amplitude and DataDog, which attracted at least <b>10K new users to convert as a fresh entry point</b>.</li>
+                        <li>Wrote Java Back-end and Back-end For Frontend (BFF) RESTful features with mobile security integration, leveraging Signadot sandbox environments to test APIs concurrently with app flows, enabling dramatically faster feature delivery, <b>from weeks to a couple of days</b>.</li>
+                        <li>Employed Claude Code and Cursor AI tools, creating custom developer skills to automate recurring development tasks and widget creation, <b>enabling other engineers to create user tailored widgets in days instead of a planned sprint</b>.</li>
+                        <li>Executed a brownfield migration from native iOS/Android screens to React Native modules within my squad, enabling us to <b>double feature delivery velocity across shared user paths</b>.</li>
+                        <li>Enforced unit testing standards and code reviews across pull requests in the engineering guild to guarantee architectural <b>consistency and reliability during rebranding campaigns events</b>.</li>
                     </ul>
 
-                    <div class="flex flex-wrap gap-1.5 pt-1">
+                    <!-- Highlighted Project Accordion Section -->
+                    <div class="mt-4 border border-brand-500/30 rounded-xl overflow-hidden bg-slate-50/50 dark:bg-slate-800/30 transition-colors">
+                        <button onclick="toggleAccordion('bitsoAccordionContent', 'bitsoAccordionIcon')" class="w-full flex items-center justify-between p-3.5 text-left text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-brand-500/10 transition-colors">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-folder-open text-brand-600 dark:text-brand-400"></i>
+                                <span>Highlighted Project — Bitso Asset Widget (End-to-End Ownership & AI Automation)</span>
+                            </span>
+                            <i id="bitsoAccordionIcon" class="fa-solid fa-chevron-down transition-transform duration-200 text-slate-500"></i>
+                        </button>
+                        
+                        <div id="bitsoAccordionContent" class="hidden px-4 pb-4 pt-2 space-y-4 text-xs sm:text-sm border-t border-slate-200 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
+                            
+                            <!-- STORY NARRATIVE BLOCK -->
+                            <div class="space-y-3 bg-white dark:bg-slate-900/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700/80 leading-relaxed">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-book text-brand-600 dark:text-brand-400"></i>
+                                    The Full Story: From Personal Pain Point to 10K Monthly Conversions
+                                </h4>
+                                <p>One of the projects I’m particularly proud of was a mobile widget I led at Bitso, designed to improve asset discoverability and price awareness across our listed crypto assets.</p>
+                                <p>The initial motivation came from a user pain point I personally experienced as a Bitso user. I felt there was an opportunity to make asset prices more accessible and localized for our LatAm users, allowing them to track relevant market information at a glance.</p>
+                                <p>I took ownership of the initiative from the product definition stage. I created the PRD in Confluence, documenting the user pain points, expected usage, technical requirements, and monitoring strategy. Once aligned with my PM, I created a Figma prototype and benchmarked similar experiences across other platforms. I then worked with our designer to validate the UI direction before starting development.</p>
+                                <p>From an engineering perspective, I led the implementation across backend and mobile. On the backend side, I worked with the existing architecture and identified an opportunity to create a lightweight version of our larger crypto-tab data flow. I implemented dedicated business endpoints for searching and consuming assets, aggregating asset information, localized prices, metadata, and historical graph points.</p>
+                                <p>This was particularly interesting because it was my first time implementing backend code within Bitso. I collaborated with four backend engineers, who helped explain the existing architecture and validate the new endpoints. The mobile-to-backend communication was REST, while gRPC was used internally between backend services.</p>
+                                <p>Once the backend infrastructure and API contracts were established, I implemented the iOS interface using SwiftUI and a lightweight branch of our internal networking layer. I also wanted to make sure we could deliver across both mobile platforms. I defined the frontend architecture and coordinated the Android implementation with two Android engineers, while another iOS engineer helped with code reviews and testing. I maintained alignment across API contracts, UI variations, and analytics instrumentation.</p>
+                                <p>After shipping to production, I created Amplitude dashboards to track adoption and conversion funnels, alongside DataDog dashboards and alerts to monitor backend health and incidents. I also coordinated with our marketing team to promote the feature and increase awareness among Bitso users.</p>
+                                <p>The result was approximately <strong>10,000 transactions generated through this widget entry point during its first month in production</strong>.</p>
+                                <p class="italic text-slate-600 dark:text-slate-400">"What I particularly enjoyed about this project was that I wasn’t limited to implementing an assigned ticket. I identified the opportunity, defined the product, expanded beyond my original iOS specialization into backend development, coordinated cross-platform delivery, and ultimately measured the business impact."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROMOTIONAL MARKETING CAMPAIGNS & INSTAGRAM REELS -->
+                    <div class="space-y-2">
+                        <span class="font-bold text-slate-900 dark:text-white text-xs block">📢 Coordinated Marketing & Promotional Reels:</span>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://www.instagram.com/reel/C0AMjEtuLvD/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pink-500/10 hover:bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-500/30 text-xs font-medium transition-all">
+                                <i class="fa-brands fa-instagram text-pink-600"></i>
+                                <span>Bitso Reel: Widget Launch</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                            <a href="https://www.instagram.com/p/C40vpe2qsJK/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pink-500/10 hover:bg-pink-500/20 text-pink-700 dark:text-pink-300 border border-pink-500/30 text-xs font-medium transition-all">
+                                <i class="fa-brands fa-instagram text-pink-600"></i>
+                                <span>Spanish Campaign Post</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                            <a href="https://www.instagram.com/p/C4-8482r-YV/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 text-xs font-medium transition-all">
+                                <i class="fa-brands fa-instagram text-emerald-600"></i>
+                                <span>Brazilian Localized Post (PT-BR)</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- MEDIA -->
+                    <div class="no-print space-y-2 pt-2">
+                        <span class="font-bold text-slate-900 dark:text-white text-xs block">🖼️ Media Screenshots:</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <img src="imgs/Bitso/Widget.jpeg"/>
+                            <img src="imgs/Bitso/Search.jpeg"/>
+                            <img src="imgs/Bitso/Conversions.jpeg"/>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5 pt-2">
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift</span>
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Kotlin</span>
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">React Native</span>
@@ -497,7 +508,7 @@
                         </div>
                         <div class="flex flex-col sm:items-end gap-1.5">
                             <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2019 – 2021 (2 yrs)</span>
-                            <a href="https://github.com/i-khalil-s/iTlajtol" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+                            <a href="https://github.com/i-khalil-s/iTlajtol" target="_blank" class="no-print inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
                                 <i class="fa-brands fa-github"></i>
                                 <span>iTlajtol GitHub Repository</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -523,6 +534,17 @@
                         <li>Developed the companion iOS app utilizing Swift and SwiftUI, delivering real-time translation and artificial pronunciation audio synthesis for field usage.</li>
                     </ul>
 
+                    <!-- Media -->
+                    <div class="no-print space-y-2 pt-2">
+                        <span class="font-bold text-slate-900 dark:text-white text-xs block">🖼️ Media:</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <img src="imgs/iTlajtol/Chat.jpeg"/>
+                            <img src="imgs/iTlajtol/Languages.jpeg"/>
+                            <img src="imgs/iTlajtol/UI.jpeg"/>
+                            <img src="imgs/iTlajtol/History.jpeg"/>
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap gap-1.5 pt-1">
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift / SwiftUI</span>
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python / Django</span>
@@ -544,7 +566,7 @@
                         </div>
                         <div class="flex flex-col sm:items-end gap-1.5">
                             <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2018 (6 mos)</span>
-                            <a href="https://thecloud.group" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                            <a href="https://thecloud.group" target="_blank" class="no-print inline-flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline">
                                 <i class="fa-solid fa-globe"></i>
                                 <span>The Cloud Group Site</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -592,7 +614,7 @@
                         </div>
                         <div class="flex flex-col sm:items-end gap-1.5">
                             <span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold w-fit border border-slate-200 dark:border-slate-700">2017 – 2019 (3 yrs)</span>
-                            <a href="https://smartsoftamerica.com.mx/" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-medium hover:underline">
+                            <a href="https://smartsoftamerica.com.mx/" target="_blank" class="no-print inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-medium hover:underline">
                                 <i class="fa-solid fa-mobile-screen"></i>
                                 <span>FoodExpress App Store</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -617,7 +639,19 @@
                         <li>Architected and built the main backend infrastructure utilizing Java, JSF, MySQL, and REST APIs, handling high transaction concurrency with Git collaboration protocols.</li>
                         <li>Engineered multiple iOS client applications (customer, merchant, and delivery courier interfaces) using Swift and CocoaPods.</li>
                         <li>Partnered with three university research teams to integrate 3 distinct Artificial Intelligence modules into production, optimizing delivery routing and restaurant recommendations.</li>
+                        <li>Implemented creative UI to feed AI recomendation algorithms on mobile.</li>
                     </ul>
+                    
+                    <!-- Media -->
+                    <div class="no-print space-y-2 pt-2">
+                        <span class="font-bold text-slate-900 dark:text-white text-xs block">🖼️ Media:</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <img src="imgs/SmartSoft/Recommendation-System.jpeg"/>
+                            <img src="imgs/SmartSoft/QuickMeeting.jpeg"/>
+                            <img src="imgs/SmartSoft/Maps.jpeg"/>
+                            <img src="imgs/SmartSoft/UI.jpeg"/>
+                        </div>
+                    </div>
 
                     <div class="flex flex-wrap gap-1.5 pt-1">
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Swift</span>
@@ -654,7 +688,18 @@
                     <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 text-sm list-disc list-inside leading-relaxed">
                         <li>Designed and deployed an official iOS application for the state of Tlaxcala allowing citizens to submit public information requests and track governmental response progress.</li>
                         <li>Won 1st Place in the university-wide mobile development contest led by state technological supervisors.</li>
+                        <li>BE connection to current main information page to connect news in-app.</li>
                     </ul>
+
+                    <!-- Media -->
+                    <div class="no-print space-y-2 pt-2">
+                        <span class="font-bold text-slate-900 dark:text-white text-xs block">🖼️ Media:</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <img src="imgs/IAIP/Entity.jpeg"/>
+                            <img src="imgs/IAIP/Home.jpeg"/>
+                            <img src="imgs/IAIP/History.jpeg"/>
+                        </div>
+                    </div>
 
                     <div class="flex flex-wrap gap-1.5 pt-1">
                         <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Objective-C / Swift</span>
@@ -668,7 +713,6 @@
 
         <!-- TWO COLUMN GRID: ACADEMIC PUBLICATIONS & EDUCATION -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
             <!-- PUBLICATIONS -->
             <section class="card-box bg-white dark:bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800/80 shadow-md transition-colors space-y-4">
                 <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
@@ -707,7 +751,7 @@
                 <div class="space-y-3 text-sm">
                     <div class="education-card p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-1 transition-colors">
                         <div class="flex justify-between items-start">
-                            <h4 class="font-bold text-slate-900 dark:text-white">Master in Computer Systems</h4>
+                            <b class="font-bold text-slate-900 dark:text-white">Master in Computer Systems <b> AI system creation and implementation</b></h4>
                             <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">2019 – 2021</span>
                         </div>
                         <p class="text-slate-700 dark:text-slate-300 text-xs">Tecnológico Nacional de México campus Apizaco</p>
@@ -854,6 +898,19 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        // Accordion Toggle Logic
+        function toggleAccordion(contentId, iconId) {
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(iconId);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
         }
     </script>
 </body>
